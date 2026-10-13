@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"); /* Import del font */
+
+/* Transition Animation between Login and Sign Up */
+body {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    font-family: "Montserrat", serif !important;
+    font-weight: 400 !important;
+}
+
+.bold-48 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.extrabold-72 {
+    font-size: 72px;
+    font-weight: 800;
+}
+
+.light-36 {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 40px 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    border: none;
+    padding: 0 15px;
+    width: 450px;
+    height: 48px;
+    background: #dfdfdf;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #595959;
+}
+
+.marginInput {
+    margin-bottom: 20px;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 450px; /* Stessa larghezza dell'input */
+    margin-inline: auto;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 15px; /* Spazio tra l'icona e il bordo destro */
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+.scroll-bg {
+    background-color: white;
+    width: 520px;
+    height: 520px;
+    margin: 50px auto 20px auto;
+    padding: 2%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-div {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 15px;
+}
+
+.scroll-object {
+    display: flex;
+    flex-wrap: wrap;
+    color: #3b3b3b;
+    padding-right: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scroll-div::-webkit-scrollbar {
+    width: 15px;
+}
+
+.scroll-div::-webkit-scrollbar-track {
+    background-color: lightgrey;
+    border-radius: 20px;
+    margin-block: 60px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb {
+    background: rgb(73, 125, 255);
+    border-radius: 20px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb:hover {
+    background: rgb(87, 133, 249);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    user-select: none;
+    position: relative;
+    color: #3b3b3b;
+    cursor: pointer;
+    display: inline-flex !important;
+    border: 2px solid #E5B700;
+    border-radius: 100px;
+    padding: 10px 20px;
+    margin-block: 6px;
+    margin-right: 5px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Aggiunge la box shadow */
+    transition: box-shadow 0.3s ease, transform .2s ease; /* Aggiunge una transizione per la box shadow e font size */
+    
+}
+
+label:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+input[type="checkbox"]:checked + label {
+    border: none;
+    padding: 12px 22px;
+    background: linear-gradient(to bottom right, #FFE100 40%, #E5B700);
+}
+
+.input-error {
+    border: 2px solid red !important;
+    margin-bottom: 5px !important; 
+}
+
+.text-error {
+    color: red;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.input-correct {
+    border: 2px solid green !important;
+}
+
+.text-correct {
+    display: none;
+}
+
+
+/* Parte sinistra - Login */
+.left-section {
+    background: radial-gradient(circle at top right, #FFE100 20%, #cea500);
+    padding: 0 35px;
+}
+
+.box-logo {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 60px;
+}
+
+.logo-text {
+    color: black;
+    margin-left: 10px;
+}
+
+
+/* Parte destra - Signup */
+.right-section {
+    background-color: #EFEFEF;
+}
+
+/* Stile per i pulsanti */
+.bottone-primario {
+    user-select: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 280px;
+    height: 66px;
+    border: none;
+    border-radius: 100px;
+    background: linear-gradient(to bottom right, #FFE100 10%, #E5B700);
+    margin-top: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform .2s ease;
+}
+
+.bottone-primario:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+.bottone-secondario {
+    user-select: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    width: 280px;
+    height: 66px;
+    border: none;
+    border-radius: 100px;
+    background: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Aggiunge la box shadow */
+    transition: box-shadow 0.3s ease, transform .2s ease, color .2s ease; /* Aggiunge una transizione per la box shadow e font size */
+}
+
+.bottone-secondario:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+.bottone-terziario {
+    user-select: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 100px;
+    background: rgb(73, 125, 255);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Aggiunge la box shadow */
+    transition: box-shadow 0.3s ease, transform .2s ease, color .2s ease; /* Aggiunge una transizione per la box shadow e font size */
+}
+
+.bottone-terziario:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+
+
+
+/* Responsiveness */
+@media (max-width: 767px) {
+    /* Text Styles */
+
+    .bold-48 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 70px;
+    }
+
+    .extrabold-72 {
+        font-size: 48px;
+        font-weight: 800;
+    }
+
+    .light-36 {
+        font-size: 24px;
+        font-weight: 300;
+    }
+
+    .container-fluid {
+        flex-direction: column;
+    }
+
+    .left-section {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        height: 40%;
+        padding: 20px;
+    }
+
+    .right-section {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 60%;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        border: none;
+        padding: 0 15px;
+        width: 450px;
+        height: 48px;
+        border-radius: 20px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .logo-img {
+        width: 40px;
+    }
+
+    .box-logo {
+        z-index: 1;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    
+    .logo-text {
+        color: black;
+        text-decoration: none;
+        margin-left: 10px;
+        display: inline-block;
+    }
+
+    .bottone-primario {
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        color: white;
+        width: 180px;
+        height: 45px;
+        border: none;
+        border-radius: 100px;
+        background: linear-gradient(to bottom right, #FFE100 40%, #E5B700);
+    }
+
+    .bottone-secondario {
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        color: black;
+        width: 180px;
+        height: 45px;
+        border: none;
+        border-radius: 100px;
+        background: white;
+    }
+
+}
+
+
+
+@media (max-width: 1313px) {
+    /* Text Styles */
+
+    .bold-48 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 60px;
+    }
+
+    .extrabold-72 {
+        font-size: 60px;
+        font-weight: 800;
+    }
+
+    .light-36 {
+        font-size: 28px;
+        font-weight: 300;
+    }
+
+    .bottone-primario {
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        color: white;
+        width: 220px;
+        height: 55px;
+        border: none;
+        border-radius: 100px;
+        background: linear-gradient(to bottom right, #FFE100 40%, #E5B700);
+    }
+
+    .bottone-secondario {
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        color: black;
+        width: 220px;
+        height: 55px;
+        border: none;
+        border-radius: 100px;
+        background: white;
+    }
+
+}
+

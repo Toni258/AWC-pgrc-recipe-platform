@@ -1,0 +1,915 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"); /* Import del font */
+
+body {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    font-family: "Montserrat", serif !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+}
+
+#addRecipe {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-content: center;
+    justify-items: center;
+}
+
+#addRecipeBox {
+    width: 32%;
+    height: auto;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    transition: all .3s ease;
+}
+
+#closeAddRecipeBox {
+    cursor: pointer;
+    text-align: end;
+    margin-bottom: 10px;
+}
+
+#AddRecipeBoxTitle {
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+#AddRecipeBoxText {
+    text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+.plateName {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFE100;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+}
+
+#AddRecipeBoxInput {
+    padding-inline: 20px;
+}
+
+#inputNoteBox {
+    width: 100%;
+    height: 130px;
+    border: 2px #FFE100 solid;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    padding: 15px 15px;
+    resize: none;           /* per evitare che l'utente possa ridimensionare la textarea */
+    overflow-y: auto;       /* assicura lo scorrimento verticale */
+    vertical-align: top;
+}
+
+#AddRecipeBoxButton {
+    text-align: center;
+}
+
+#addButton {
+    background: linear-gradient(to bottom right, #FFE100 10%, #E5B700 90%);
+    padding: 15px 100px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all .3s ease;
+}
+
+#addButton:hover {
+    transform: scale(1.03);
+}
+
+#AddRecipeBoxNote {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+#navbar {
+    background: linear-gradient(to right, #E5B700, #FFE100 40%);
+    height: calc((160 / 1080) * 100vh);
+    border-radius: 0 0 50px 50px;
+}
+
+#box-logo {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    width: auto;
+}
+
+#ricettario, #account, #login {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    color: black;
+    align-self: center;
+    width: 14%;
+    transition: all 0.2s ease;
+}
+
+#searchBar {
+    height: 35%;
+    width: 25%;
+    border-radius: 100px;
+    align-self: center;
+    margin-inline: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dropdown {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    margin-right: 20px;
+}
+
+.row {
+    --bs-gutter-x: 0px !important;
+}
+
+#firstContainer {
+    text-align: center;
+    padding-inline: 2%;
+}
+
+#plateImg {
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+#plateTags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    /*margin-inline: 10px;*/
+}
+
+.tagItem, .tagItemArea {
+    user-select: none;
+    background: #FFE100;
+    padding: 5px 30px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.tagItemArea {
+    background: rgb(87, 133, 249);
+    color: white;
+}
+
+#plateName {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    padding-left: 30px;
+}
+
+#instructions {
+    padding-inline: 5%;
+}
+
+#ingredients, #instructionsText {
+    margin-top: 50px;
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.instructionItem {
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 1%;
+    margin-bottom: 5px;
+}
+
+.ingredientElement {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 15px !important;
+    margin-top: 5px !important;
+}
+
+.ingredientText {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 5px !important;
+}
+
+#saveRecipe {
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    background: linear-gradient(to right bottom, #FFE100 30%, #E5B700);
+    border-radius: 40px;
+    padding: 15px 25px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    border: none;
+}
+
+#saveRecipeText {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#bookmark {
+    color: white;
+    font-size: 26px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 5px;
+    font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+}
+
+.saved {
+    font-variation-settings: 'FILL' 1, 'wght' 700 !important;
+}
+
+
+
+
+.scroll-bg {
+    width: calc((80vw/100) * 90);
+}
+
+#addReview {
+    margin-right: 50px;
+}
+
+.scroll-div {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    border-radius: 15px;
+}
+
+.scroll-object {
+    display: inline-flex;
+    color: black;
+}
+
+.scroll-div::-webkit-scrollbar {
+    height: 15px;
+}
+
+.scroll-div::-webkit-scrollbar-track {
+    background-color: lightgrey;
+    border-radius: 20px;
+    margin-inline: 400px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb {
+    background: rgb(73, 125, 255);
+    border-radius: 20px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb:hover {
+    background: rgb(87, 133, 249);
+}
+
+.alreadyReviewed {
+    display: none !important;
+}
+
+#reviewsItems {
+    display: inline-flex;
+    width: max-content;
+}
+
+#reviews {
+    padding-inline: 5%;
+    margin-bottom: 60px;
+}
+
+
+
+.statsReviews {
+    display: flex;
+    padding-block: 50px 20px;
+}
+
+.plateReviews {
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    gap: 30px;
+    margin-left: 120px;
+}
+
+.starReview, .difficultyReview, .numberReview {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.kidStar, .stockpot, .reviews {
+    user-select: none;
+    font-size: 26px !important;
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+}
+
+.reviewVote {
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+
+.kidStar {
+    color: #FFCC00;
+}
+
+.stockpot {
+    color: rgb(73, 125, 255);
+}
+
+.reviews {
+    color: red;
+}
+
+#reviewsText {
+    font-size: 28px;
+    font-weight: 600;
+    margin-left: 65px;
+}
+
+
+#addReviewButton {
+    width: 250px;
+    height: 280px;
+    border: 6px black dashed;
+    border-radius: 40px;
+    margin-left: 1%;
+    color: black;
+}
+
+#addReviewButton:hover {
+    animation: swing 2s infinite;
+}
+
+#addReviewButton.disappear {
+    display: none;
+}
+
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#enabledReview {
+    display: none;
+    width: 250px;
+    height: 280px;
+    padding-top: 30px;
+    border: 6px black dashed;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#enabledReview.appear {
+    display: block;
+}
+
+.rating {
+    user-select: default;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.grade {
+    color: rgb(73, 125, 255);
+    font-size: 22px !important;
+    letter-spacing: -2px !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+}
+
+.deactive {
+    color: white !important;
+    font-variation-settings: 'FILL' 1, 'wght' 400  !important;
+}
+
+.deactiveUser {
+    color: black !important;
+    font-variation-settings: 'FILL' 1, 'wght' 400  !important;
+}
+
+.difficulty {
+    color: rgb(73, 125, 255);
+    font-size: 22px !important;
+    letter-spacing: -2px !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+}
+
+.userReview {
+    user-select: none;
+    width: 250px;
+    height: 280px;
+    padding-top: 30px;
+    background: linear-gradient(to left bottom, #FFE100 30%, #E5B700 90%);
+    border-radius: 40px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profilePic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(73, 125, 255);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.personLogo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-size: 35px !important;
+    font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24 !important;
+}
+
+.profileName {
+    font-size: 26px;
+    font-family: "Montserrat";
+    font-weight: 800;
+    color: white;
+    text-shadow: 0px 0px 6px rgba(73, 125, 255, 0.6);
+    letter-spacing: 1px;
+    margin-left: 10px;
+
+    max-width: 150px; /* Limita la larghezza del nome utente */
+    white-space: wrap; /* Impedisce la rottura su più righe */
+    overflow: hidden; /* Nasconde il testo che eccede */
+    text-overflow: ellipsis; /* Aggiunge "..." per indicare testo troncato */
+}
+
+.content {
+    padding-inline: 17%;
+}
+
+.section {
+    margin-bottom: 15px;
+}
+
+.sectionUser {
+    margin-bottom: 5px;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerUser {
+    display: block;
+}
+
+#dateInput {
+    background-color: rgb(73, 125, 255);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5%;
+    
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.date {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(73, 125, 255);
+    text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.8);
+}
+
+#submitReview {
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to left bottom, #FFE100 30%, #E5B700 90%);
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5%;
+    transition: all .3s ease;
+}
+
+#submitReview:hover {
+    transform: scale(1.06);
+}
+
+#add_icon {
+    color: black;
+    font-size: 56px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+
+
+#saveRecipe:hover {
+    transform: scale(0.95);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+#back-icon {
+    margin-left: calc((100 / 1920) * 100vh);
+    align-self: center;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    color: black;
+    font-size: 36px;
+    font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+}
+
+#back-icon:hover {
+    transform: scale(1.06);
+}
+
+#ricettario:hover, #account:hover, #login:hover {
+    font-size: 33px;
+}
+
+#searchBar:hover {
+    transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsiveness */
+@media (max-width: 1400px) {
+    #ricettario, #account, #login {
+        font-size: 30px;
+    }
+
+    #searchBar {
+        width: 25%;
+    }
+
+    .scroll-bg {
+        width: calc((80vw/100) * 80);
+    }
+
+    .scroll-div::-webkit-scrollbar-track {
+        margin-inline: 300px;
+    }
+
+    .instructionItem {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    #saveRecipe {
+        padding: 12px 22px;
+    }
+    
+    #saveRecipeText {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    #bookmark {
+        font-size: 24px;
+        margin-right: 5px;
+    }
+
+    #addRecipeBox {
+        width: 40%;
+        padding: 30px;
+    }
+
+    #AddRecipeBoxTitle {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+    
+    #AddRecipeBoxText {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .plateName {
+        font-size: 20px;
+    }
+
+    .plateReviews {
+        display: inline-flex;
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+    }
+    
+    #AddRecipeBoxInput {
+        padding-inline: 18px;
+    }
+
+    #addButton {
+        padding: 15px 100px;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    #AddRecipeBoxNote {
+        font-size: 16px;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 1250px) {
+    #ricettario, #account, #login {
+        font-size: 26px;
+    }
+
+    #searchBar {
+        width: 30%;
+    }
+
+    .ingredientElement {
+        font-size: 18px;
+        padding-left: 15px !important;
+    }
+    
+    .ingredientText {
+        font-size: 18px;
+    }
+
+    .tagItem, .tagItemArea {
+        padding: 5px 25px;
+        font-size: 16px;
+    }
+}
+
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+    #ricettario, #account, #login {
+        width: 20%;
+    }
+    
+    #back-icon {
+        margin-left: calc((90 / 1920) * 100vh);
+    }
+
+    #searchBar {
+        width: 35%;
+    }
+
+    .scroll-bg {
+        width: calc((80vw/100) * 68);
+    }
+
+    #addReview {
+        margin-right: 30px;
+    }
+
+    #addReviewButton {
+        transform: scale(0.95);
+    }
+
+    #enabledReview {
+        transform: scale(0.95);
+    }
+
+    .userReview {
+        margin-right: 50px;
+        transform: scale(0.95);
+    }
+
+    .scroll-div::-webkit-scrollbar-track {
+        margin-inline: 100px;
+    }
+
+    .instructionItem {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .ingredientElement {
+        font-size: 16px;
+        padding-left: 5px !important;
+    }
+    
+    .ingredientText {
+        font-size: 16px;
+    }
+
+    #saveRecipe {
+        padding: 12px 18px;
+    }
+    
+    #saveRecipeText {
+        font-size: 16px;
+    }
+    
+    #bookmark {
+        font-size: 22px;
+        transition: all 1s ease;
+    }
+
+    #ingredients {
+        font-size: 26px;
+    }
+
+    .tagItem, .tagItemArea {
+        padding: 5px 20px;
+        font-size: 15px;
+    }
+
+    #addRecipeBox {
+        width: 55%;
+        padding: 30px;
+    }
+
+    #reviewsText {
+        font-size: 24px;
+        margin-left: 65px;
+    }
+}
+
+/* Nasconde le voci di menu e mostra il burger menu per schermi piccoli */
+@media (max-width: 767px) {
+    #ricettario, #account, #login {
+        display: none !important;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    #back-icon {
+        margin-left: calc((70 / 1920) * 100vh);
+    }
+
+    #searchBar {
+        width: 40%;
+    }
+
+    .scroll-bg {
+        width: calc((80vw/100) * 55);
+    }
+
+    #addReview {
+        margin-right: 0px;
+    }
+
+    #addReviewButton {
+        transform: scale(0.85);
+    }
+
+    #enabledReview {
+        transform: scale(0.85);
+    }
+
+    .userReview {
+        margin-right: 1px;
+        transform: scale(0.85);
+    }
+
+    .scroll-div::-webkit-scrollbar-track {
+        margin-inline: 30px;
+    }
+
+    #saveRecipe {
+        padding: 10px 10px;
+    }
+    
+    #saveRecipeText {
+        display: none;
+    }
+    
+    #bookmark {
+        font-size: 22px;
+        margin-right: 0px;
+    }
+
+    #plateName {
+        font-size: 32px;
+        padding-left: 20px;
+    }
+
+    #ingredients {
+        font-size: 22px;
+    }
+
+    .tagItem, .tagItemArea {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    #addRecipeBox {
+        width: 65%;
+        padding: 30px;
+    }
+
+    #AddRecipeBoxTitle {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    #AddRecipeBoxText {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    
+    .plateName {
+        font-size: 18px;
+    }
+    
+    #AddRecipeBoxInput {
+        padding-inline: 16px;
+    }
+
+    #addButton {
+        padding: 15px 60px;
+        font-size: 14px;
+    }
+
+    .statsReviews {
+        padding-block: 40px 0px;
+    }
+
+    #reviewsText {
+        font-size: 22px;
+        margin-left: 75px;
+    }
+
+    .plateReviews {
+        gap: 20px;
+        margin-left: 100px;
+    }
+}
+

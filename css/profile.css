@@ -1,0 +1,725 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"); /* Import del font */
+
+
+
+/* ---------------------   Region Functioning   --------------------- */
+
+body {
+    user-select: none;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    font-family: "Montserrat", serif !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+    background-color: #EFEFEF !important;
+}
+
+#navbar {
+    background: linear-gradient(to right, #E5B700, #FFE100 40%);
+    height: calc((160 / 1080) * 100vh);
+    border-radius: 0 0 50px 50px;
+}
+
+#searchBar {
+    height: 35%;
+    width: 25%;
+    border-radius: 100px;
+    align-self: center;
+    margin-inline: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#searchBar:hover {
+    transform: scale(1.03);
+}
+
+#home {
+    position: absolute;
+    top: calc((110 / 1080)* 50vh);
+    left: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 32px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    color: black;
+    transition: all 0.2s ease;
+}
+
+#home:hover {
+    font-size: 33px;
+}
+
+#scrollbar {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#title {
+    user-select: none;
+    width: 320px;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.arrowBack {
+    color: black;
+    font-size: 36px !important;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    cursor: pointer;
+}
+
+.arrowForward {
+    color: black;
+    font-size: 36px !important;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    cursor: pointer;
+}
+
+.conteinerArrow {
+    width: 35px;
+    display: flex;
+    text-align: center;
+}
+
+#carouselForm {
+    width: 100%;
+    text-align: center;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border: 0px;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.material-symbols-outlined {
+    user-select: none;
+}
+
+.deletetion {
+    display: flex;
+    height: 250px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.deleteAccountText {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.closePopupButton, .deleteButton {
+    flex: 1;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.closePopupButton {
+    background-color: #007bff; /* Blu */
+    color: white;
+}
+
+.closePopupButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.deleteButton {
+    background-color: #ff0000; /* Rosso */
+    color: white;
+}
+
+.deleteButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* ---------------------   Region Account   --------------------- */
+
+#content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+input[type="password"], input[type="text"], input[type="email"] {
+    background-color: #E0E0E0;
+    width: 450px;
+    height: 40px;
+    color: black;
+    border-radius: 20px;
+    text-align: left;
+    padding-left: 15px;
+    border: 0px;
+    margin-block: 5px !important;
+}
+
+.bottone-primario {
+    user-select: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 450px;
+    height: 60px;
+    border: none;
+    border-radius: 100px;
+    transition: box-shadow 0.3s ease, transform .2s ease;
+    margin-block: 10px;
+    margin-top: 80px;
+    margin-inline: 10px;
+}
+
+.bottone-primario:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+.bottone-primario.disabled {
+    background: #A4A4A4; /* Colore grigio chiaro */
+    cursor: not-allowed; /* Cambia il cursore per indicare che è disabilitato */
+    box-shadow: none; /* Rimuove l'ombra */
+    transform: none; /* Rimuove l'effetto di zoom */
+}
+
+.bottone-primario.active {
+    background: linear-gradient(to bottom right, #FFE100 10%, #E5B700); /* Colori attivi */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.bottone-logout {
+    user-select: none;
+    background: linear-gradient(to bottom right, #11a3cf 10%, #026ec1); /* Colori attivi */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 450px;
+    height: 60px;
+    border: none;
+    border-radius: 100px;
+    transition: box-shadow 0.3s ease, transform .2s ease;
+    margin-block: 5px;
+    margin-inline: 10px;
+}
+
+.bottone-logout:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+.bottone-secondario {
+    user-select: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 450px;
+    height: 60px;
+    border: none;
+    border-radius: 100px;
+    background: linear-gradient(to bottom right, #FF0000 10%, #740303);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform .2s ease;
+    margin-block: 10px;
+    margin-inline: 10px;
+}
+
+.bottone-secondario:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 450px; /* Stessa larghezza dell'input */
+}
+
+#oldPassword, #newPassword {
+    background-color: #E0E0E0;
+    width: 100%; /* Utilizza tutta la larghezza del contenitore */
+    height: 40px;
+    color: #4F4F4F;
+    border-radius: 20px;
+    text-align: left;
+    padding-left: 15px;
+    border: 0px;
+}
+
+#toggleOldPassword, #toggleNewPassword {
+    position: absolute;
+    right: 15px; /* Spazio tra l'icona e il bordo destro */
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.input-error {
+    border: 2px solid red !important;
+    margin-bottom: 5px !important; 
+}
+
+.text-error {
+    color: red;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.input-correct {
+    border: 2px solid green !important;
+}
+
+.text-correct {
+    display: none;
+}
+
+.popup-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* ---------------------   Region Formulario   --------------------- */
+
+#contentFormulario {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipeSavedContainer {
+    width: 1300px;
+    height: 350px;
+    background-color: white;
+    border-radius: 35px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.plateLeft {
+    flex: 2; /* Occupa 1/4 del contenitore */
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.plateImg {
+    width: 350px;
+    height: 350px;
+    object-fit: contain; /* Assicura che l'immagine sia interamente visibile */
+    background-color: #FFCC00;
+    border-radius: 35px 0px 0px 35px;
+    transition: all 0.3s ease;
+}
+
+.plateRight {
+    height: 100%;
+    flex: 5; /* Occupa 3/4 del contenitore */
+    display: flex;
+    flex-direction: column; /* Disposizione verticale */
+    align-items: flex-start; /* Allinea a sinistra */
+}
+
+.upperRightSection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+    margin-top: 35px;
+}
+
+.plateNote {
+    width: 100%;
+    padding-right: 40px;
+    margin-top: 10px;
+}
+
+textarea {
+    height: 100px;
+    width: 100%;
+    border-radius: 0px 0px 30px 0px;
+    border: 1px solid rgb(117, 117, 117);
+    padding: 10px; /* Per creare spazio interno */
+    box-sizing: border-box; /* Garantisce che padding non superi la larghezza */
+    resize: none !important; /* Rimuove il ridimensionamento della textarea, opzionale */
+    overflow: auto; /* Permette la comparsa della scrollbar */
+    outline: none;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: black;
+}
+
+.bookmarkButton {
+    cursor: pointer;
+    font-size: 40px !important;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: #FFE100;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.bookmarkButton:hover {
+    transform: scale(1.1);
+}
+
+.plateName {
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+}
+
+.areaAndCategory {
+    font-size: 28px;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(73, 125, 255);
+    margin-top: 20px;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.yourNote {
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: #757575;
+    margin-top: 55px;
+}
+
+#errorTextFormulario, #errorTextReviews {
+    color: rgb(8, 0, 255);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+
+
+/* ---------------------   Region Reviews   --------------------- */
+
+#contentReviews {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviewSavedContainer {
+    width: 1000px;
+    height: 250px;
+    background-color: white;
+    border-radius: 35px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.deleteIcon {
+    cursor: pointer;
+    font-size: 32px !important;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: red;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.deleteIcon:hover {
+    transform: scale(1.1);
+}
+
+.tasteContainer, .difficultyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tasteContainer {
+    margin-top: 50px;
+}
+
+.difficultyContainer {
+    margin-top: 15px;
+}
+
+.plateImgReviews {
+    width: 250px;
+    height: 250px;
+    object-fit: contain; /* Assicura che l'immagine sia interamente visibile */
+    background-color: #FFCC00;
+    border-radius: 35px 0px 0px 35px;
+    transition: all 0.3s ease;
+}
+
+.upperRightSectionReviews {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+    margin-top: 25px;
+}
+
+.plateNameReviews {
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+    text-align: left;
+}
+
+.bottomSection {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 35px;
+}
+
+.tasteText, .difficultyText, .dateText {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.star {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 40;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.difficulty {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 40;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.dateContainer {
+    padding-bottom: 5px;
+}
+
+.fullStar {
+    color: rgb(73, 125, 255) !important;
+}
+
+.fullDifficulty {
+    color: rgb(73, 125, 255) !important;
+}
+
+.dateValue {
+    margin-left: 15px;
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 1400px) {
+    /* ---------------------   Region Account   --------------------- */
+
+    #searchBar {
+        width: 25%;
+    }
+
+    #home {
+        font-size: 30px;
+        top: calc((115 / 1080)* 50vh);
+        left: 40px;
+    }
+
+    #home:hover {
+        font-size: 31px;
+    }
+
+    /* ---------------------   Region Formulario   --------------------- */
+    
+    .recipeSavedContainer {
+        transform: scale(0.9);
+    }
+
+    /* ---------------------   Region Reviews   --------------------- */
+
+    .reviewSavedContainer {
+        transform: scale(0.9);
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width: 1250px) {
+    /* ---------------------   Region Account   --------------------- */
+
+    #searchBar {
+        width: 30%;
+    }
+
+    #home {
+        font-size: 26px;
+        top: calc((120 / 1080)* 50vh);
+        left: 30px;
+    }
+
+    #home:hover {
+        font-size: 27px;
+    }
+
+    /* ---------------------   Region Formulario   --------------------- */
+
+    .recipeSavedContainer {
+        transform: scale(0.8);
+        margin-bottom: 0px;
+    }
+
+
+    /* ---------------------   Region Reviews   --------------------- */
+
+    .reviewSavedContainer {
+        transform: scale(0.85);
+        margin-bottom: -10px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    /* ---------------------   Region Account   --------------------- */
+
+    #searchBar {
+        width: 35%;
+    }
+
+    /* ---------------------   Region Formulario   --------------------- */
+
+    .recipeSavedContainer {
+        transform: scale(0.55);
+        margin-bottom: -100px;
+    }
+
+    #contentFormulario {
+        margin-top: -50px;
+    }
+
+    /* ---------------------   Region Reviews   --------------------- */
+
+    .reviewSavedContainer {
+        transform: scale(0.7);
+        margin-bottom: -50px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    /* ---------------------   Region Account   --------------------- */
+
+    #searchBar {
+        width: 40%;
+    }
+
+    #home {
+        font-size: 20px;
+        top: calc((130 / 1080)* 50vh);
+        left: 20px;
+    }
+
+    #home:hover {
+        font-size: 21px;
+    }
+
+    /* ---------------------   Region Formulario   --------------------- */
+
+    #contentProfile, #scrollbar {
+        transform: scale(0.8);
+    }
+
+    .recipeSavedContainer {
+        transform: scale(0.45);
+        margin-bottom: -170px;
+    }
+
+    #contentFormulario {
+        margin-top: -100px;
+    }
+
+
+
+    /* ---------------------   Region Reviews   --------------------- */
+
+    .reviewSavedContainer {
+        transform: scale(0.55);
+        margin-bottom: -90px;
+    }
+
+    #contentReviews {
+        margin-top: -30px;
+    }
+
+}

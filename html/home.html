@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PGRC</title>
+        <link rel="icon" type="image/png" href="../img/logo.png">
+        <script src="../js/utility.js"></script>
+        <script src="../js/home.js"></script>
+        <script src="../js/api.js"></script>
+        <script src="../js/data.js"></script>
+        <link href="../css/home.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+  <body>
+        <div id="navbar" class="d-flex">
+            <a id="box-logo" class="col-md-2" href="home.html">
+                <img id="logo-img" src="../img/logo.png" alt="PGRC Logo">
+                <h1 id="logo-text">PGRC</h1>
+            </a>
+            <input id="searchBar" class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <a class="col-md-2" id="ricettario" href="profile.html?tab=ricettario">Ricettario</a>
+            <a class="col-md-2" id="account" href="profile.html?tab=account">Account</a>
+            <a class="col-md-2" id="login" href="login.html">Login</a>
+            <div class="dropdown">
+                <button id="burger-menu" class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="../img/burger-menu.png" alt="Menu" style="width: 35px; height: auto;">
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item logged" href="profile.html?tab=ricettario">Ricettario</a></li>
+                  <li><a class="dropdown-item logged" href="profile.html?tab=account">Account</a></li>
+                  <li><a class="dropdown-item unlogged" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="itemList" class="grid-container"></div> <!-- Qui si aggiungeranno, tramite API, i piatti -->
+
+        <!-- Footer con i tasti -->
+        <footer class="d-flex justify-content-center mt-4 p-3 bg-light">
+            <button onclick="loadDemoData()" id="loadDemoData" class="btn btn-primary mx-2">Load Demo Data</button>
+            <button onclick="deleteData()" id="deleteData" class="btn btn-danger mx-2">Delete Data</button>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

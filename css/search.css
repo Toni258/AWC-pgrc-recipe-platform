@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"); /* Import del font */
+
+/* Transition Animation between Login and Sign Up */
+body {
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+}
+
+#navbar {
+    background: linear-gradient(to right, #E5B700, #FFE100 40%);
+    height: calc((160 / 1080) * 100vh);
+    border-radius: 0 0 50px 50px;
+}
+
+#box-logo {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    width: auto;
+}
+
+#logo-img {
+    width: 77px; /* o la larghezza desiderata */
+    height: auto; /* Mantiene il rapporto di aspetto */
+    object-fit: contain; /* L'immagine verrà scalata senza distorsioni */
+    margin-left: calc((80 / 1920) * 100vh);
+    align-self: center;
+}
+
+#logo-text {
+    color: black;
+    font-weight: 700;
+    align-self: center;
+    margin-left: calc((24 / 1920) * 100vh);
+}
+
+#box-logo:hover {
+    transform: scale(1.03);
+}
+
+#ricettario, #account, #login {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    color: black;
+    align-self: center;
+    width: 14%;
+    transition: all 0.2s ease;
+}
+
+#ricettario:hover, #account:hover, #login:hover {
+    font-size: 33px;
+}
+
+.dropdown {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    margin-right: 20px;
+}
+
+#searchBar {
+    height: 35%;
+    width: 25%;
+    border-radius: 100px;
+    align-self: center;
+    margin-inline: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Aggiunge la box shadow */
+    transition: all 0.3s ease;
+}
+
+#searchBar:hover {
+    transform: scale(1.03);
+}
+
+.messaggioRicerca {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-block: 40px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.searchContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.plateSearch {
+    cursor: pointer;
+    width: 1090px;
+    height: 250px;
+    background-color: white;
+    border-radius: 35px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.plateSearch:hover {
+    transform: scale(1.03);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.plateImg {
+    width: 205px;
+    height: 205px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    max-width: 100%; /* L'immagine si adatta alla larghezza del contenitore */
+    height: auto;    /* Mantiene il rapporto d'aspetto originale */
+    object-fit: contain; /* Assicura che l'immagine sia interamente visibile */
+    border: 5px solid #FFCC00;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+
+/* Colonna sinistra con l'immagine */
+.plateLeft {
+    flex: 1; /* Occupa 1/4 del contenitore */
+    display: flex; 
+    justify-content: center;
+}
+
+
+.plateRight {
+    height: 100%;
+    flex: 3; /* Occupa 3/4 del contenitore */
+    display: flex;
+    flex-direction: column; /* Disposizione verticale */
+    justify-content: space-evenly; /* Spazi distribuiti tra gli elementi */
+    align-items: flex-start; /* Allinea a sinistra */
+}
+
+
+.plateName {
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+}
+
+.areaAndCategory {
+    font-size: 20px;
+    font-weight: 700;
+    color: #002BFF;
+}
+
+.plateReviews {
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    gap: 60px;
+}
+
+.starReview, .difficultyReview, .numberReview {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.kidStar, .stockpot, .reviews {
+    user-select: none;
+    font-size: 26px !important;
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+}
+
+.reviewVote {
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+
+.kidStar {
+    color: #FFCC00;
+}
+
+.stockpot {
+    color: rgb(73, 125, 255);
+}
+
+.reviews {
+    color: red;
+}
+
+
+
+
+
+
+/* Responsiveness */
+@media (max-width: 1400px) {
+    #ricettario, #account, #login {
+        font-size: 30px;
+    }
+
+    #logo-img {
+        width: 70px;
+    }
+    
+    #logo-text {
+        font-size: 36px;
+    }
+
+    #searchBar {
+        width: 25%;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 1250px) {
+    #ricettario, #account, #login {
+        font-size: 26px;
+    }
+
+    #searchBar {
+        width: 30%;
+    }
+
+    .plateSearch {
+        width: 900px;
+        height: 230px;
+        margin-bottom: 40px;
+    }
+
+    .plateImg {
+        width: 185px;
+        height: 185px;
+        border: 5px solid #FFCC00;
+    }
+
+    .plateName {
+        font-size: 26px;
+    }
+
+    .areaAndCategory {
+        font-size: 18px;
+    }
+
+    .plateReviews {
+        gap: 50px;
+    }
+}
+
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+    #ricettario, #account, #login {
+        width: 20%;
+    }
+    
+    #logo-img {
+        width: 60px;
+        margin-left: calc((70 / 1920) * 100vh);
+    }
+    
+    #logo-text {
+        display: block;
+        font-size: 32px;
+        margin-left: calc((18 / 1920) * 100vh);
+    }
+
+    .plateSearch {
+        width: 650px;
+        height: 210px;
+        margin-bottom: 30px;
+    }
+
+    .plateImg {
+        width: 155px;
+        height: 155px;
+        border: 5px solid #FFCC00;
+    }
+
+    .plateName {
+        font-size: 26px;
+    }
+
+    .areaAndCategory {
+        font-size: 18px;
+    }
+
+    .plateReviews {
+        gap: 40px;
+    }
+
+    .plateLeft {
+        flex: 1;
+    }
+    
+    .plateRight {
+        flex: 2;
+    }
+}
+
+/* Nasconde le voci di menu e mostra il burger menu per schermi piccoli */
+@media (max-width: 767px) {
+    #ricettario, #account, #login {
+        display: none !important;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    .searchContainer {
+        justify-content: center;
+    }
+    
+    #logo-text {
+        display: none;
+        font-size: 28px;
+        margin-left: calc((14 / 1920) * 100vh);
+    }
+
+    #searchBar {
+        width: 40%;
+    }
+
+    .plateSearch {
+        width: 450px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .plateImg {
+        width: 125px;
+        height: 125px;
+        border: 5px solid #FFCC00;
+    }
+
+    .plateName {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .areaAndCategory {
+        font-size: 16px;
+    }
+
+    .plateReviews {
+        font-size: 16px;
+        font-weight: 600;
+        gap: 30px;
+    }
+    
+    .kidStar, .stockpot, .reviews {
+        font-size: 20px !important;
+    }
+    
+    .reviewVote {
+        font-size: 15px;
+    }
+}
+
