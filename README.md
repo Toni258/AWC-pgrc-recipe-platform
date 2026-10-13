@@ -1,6 +1,7 @@
 # PGRC — Recipe Management Platform
 
-PGRC is a responsive recipe web application developed as an individual project for the Web and Cloud Applications course at the University of Milan (A.Y. 2023/2024). It uses TheMealDB REST API to retrieve recipes and lets users save dishes to a personal cookbook, add private notes, and write reviews.
+PGRC is a responsive recipe web application developed as an individual project for the Web and Cloud Applications course at the University of Milan.
+It uses TheMealDB REST API to retrieve recipes and lets users save dishes to a personal cookbook, add private notes, and write reviews.
 
 ## Features
 
@@ -70,13 +71,9 @@ The page navigation is documented in the [navigation schema](docs/navigation-sch
 
 ## Running locally
 
-The project does not require a build step or package installation. Python 3 can be used to serve the static files locally.
+Open index.html in your browser to launch the application.
 
-```bash
-python -m http.server 8000
-```
-
-Then open [http://localhost:8000/html/home.html](http://localhost:8000/html/home.html) in your browser.
+No build step or package installation is required.
 
 An internet connection is required to retrieve recipes from TheMealDB and load the external CSS, fonts, and JavaScript libraries.
 
@@ -86,6 +83,5 @@ PGRC is a frontend-only coursework project and does not have its own backend or 
 
 The **Load Demo Data** button on the Home and Search pages populates browser storage with sample data. It clears the current `localStorage` before loading the demo, so use it only if you are happy to replace existing local data. **Delete Data** clears `localStorage` and `sessionStorage` for the current origin.
 
-## Project context
-
-This was an individual project for the Web and Cloud Applications course at the University of Milan (A.Y. 2023/2024). It gave me practical experience with responsive web interfaces, REST API requests, JSON data, form validation, and client-side state management.
+## What I learned
+This project gave me practical experience with responsive web interfaces, REST API requests, JSON data, form validation, and client-side state management.
